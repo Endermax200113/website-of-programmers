@@ -52,4 +52,8 @@ export default {
 	width: max-content
 	height: 40px
 	margin: 80px auto
+	transition: margin .3s ease-in-out
+
+	@media only screen and (max-width: 500px)
+		margin: 50px auto
 </style>

@@ -42,7 +42,7 @@
 					<a href="#" class="menu__link">Профиль</a>
 				</li>
 				
-				<li class="menu__item">
+				<li class="menu__item menu__item_search">
 					<input type="search" class="menu__search" placeholder="Поиск по блогу">
 				</li>
 			</ul>
@@ -94,24 +94,14 @@ export default {
 			if (!this.showingMobileMenu) {
 				button.classList.add('close');
 				sidebar.classList.add('show');
-				// bg.style.display = 'block';
-				// setTimeout(on, 10);
-
-				// function on() {
-					bg.classList.add('show');
-				// }
+				bg.classList.add('show');
 			} else {
 				button.classList.remove('close');
 				sidebar.classList.remove('show');
 				bg.classList.remove('show');
-				// setTimeout(off, 300);
-
-				// function off() {
-				// 	bg.style.display = 'none';
-				// }
 			}
 
-			this.showingMobileMenu =!this.showingMobileMenu;
+			this.showingMobileMenu = !this.showingMobileMenu;
 		},
 		closeMenu() {
 			if (this.showingMobileMenu)
@@ -140,6 +130,10 @@ export default {
 		margin-bottom: 60px
 		opacity: 0
 		z-index: -9999
+		transition: margin-bottom .3s ease-in-out
+
+		@media only screen and (max-width: 500px)
+			margin-bottom: 20px
 
 .background
 	position: fixed
@@ -191,19 +185,31 @@ export default {
 		transition: margin-top .3s ease-in-out
 
 		&.mobile
+			width: 30px
 			height: calc(100% - 20px)
 			position: absolute
 			margin-top: -100%
 			padding: 10px 15px
 			transition: margin-top .3s ease-in-out
 			cursor: pointer
+		
+		&_search
+			width: 210px
 
 		@media only screen and (max-width: 700px)
+			transition: margin-top .3s ease-in-out
+
 			&:first-child
 				margin-top: -100%
 			
 			&.mobile
 				margin-top: 200%
+		
+		@media only screen and (max-width: 660px)
+			width: 0px
+			
+			&_search
+				width: 210px
 	
 	&__link
 		height: 100%

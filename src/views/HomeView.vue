@@ -140,4 +140,11 @@ export default {
 .container
 	width: 600px
 	margin: 0 auto
+	transition: width .3s ease-in-out
+
+	@media only screen and (max-width: 700px)
+		width: 445px
+	
+	@media only screen and (max-width: 500px)
+		width: 290px
 </style>

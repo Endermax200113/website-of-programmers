@@ -17,18 +17,18 @@
 		<div class="post__element description" v-if="post.hasDescription">{{post.description}}</div>
 
 		<div class="post__element last">
-			<div class="info">
+			<span class="info">
 				<time class="date" :datetime=post.date>{{post.date}}</time>
 
-				<div class="tags" v-if="post.tags.length > 0" v-for="tag in post.tags">
-					<div class="tag">{{tag}}</div>
-				</div>
-			</div>
+				<span class="tags" v-if="post.tags.length > 0" v-for="tag in post.tags">
+					<span class="tag">{{tag}}</span>
+				</span>
+			</span>
 
-			<div class="button" v-if="post.canRead || post.canComment">
+			<span class="button" v-if="post.canRead || post.canComment">
 				<a href="#" class="button__read" v-if="post.canRead">читать</a>
 				<a href="#" class="button__comment" v-else-if="post.canComment">оставить комментарий</a>
-			</div>
+			</span>
 		</div>
 	</div>
 </template>
@@ -65,11 +65,18 @@ export default {
 
 		&:first-child
 			margin-top: 25px
+			transition: width .3s ease-in-out, margin-top .3s ease-in-out, margin .3s ease-in-out, height .3s ease-in-out
+
+			@media only screen and (max-width: 500px)
+				margin-top: 13px
 		
 		&.image
 			&:first-child
 				margin-bottom: 25px
 				margin-top: 0px
+
+				@media only screen and (max-width: 500px)
+					margin-bottom: 19px
 		
 		&.video
 			&:first-child
@@ -83,6 +90,11 @@ export default {
 	font-size: 18px
 	line-height: 21px
 	color: $color-full-white
+	transition: width .3s ease-in-out, margin .3s ease-in-out
+
+	@media only screen and (max-width: 500px)
+		width: calc(100% - 15px * 2)
+		margin: 0px 15px 19px
 
 .description
 	margin: 0px 27.78px 8px
@@ -91,17 +103,27 @@ export default {
 	font-size: 14px
 	line-height: 21px
 	color: $color-dim-white
+	transition: margin .3s ease-in-out
+
+	@media only screen and (max-width: 500px)
+		margin: 0px 13px 15px
 
 .last
+	position: relative
+	width: calc(100% - 55.56px)
 	margin: 0px 27.78px
 	padding: 5px 0px 25px
+	transition: margin .3s ease-in-out, padding .3s ease-in-out
 	display: flex
 	justify-content: space-between
-	align-items: center
+
+	@media only screen and (max-width: 500px)
+		width: calc(100% - 30px)
+		margin: 0px 15px
+		padding: 0px 0px 18px
+		flex-direction: column
 
 	& > .info
-		display: flex
-
 		& > .date
 			font-family: $font-lato
 			font-weight: 400
@@ -110,8 +132,6 @@ export default {
 			color: $color-gray
 		
 		& > .tags
-			display: flex
-
 			& > .tag
 				position: relative
 				margin-left: 36px
@@ -133,6 +153,7 @@ export default {
 					border-radius: 50%
 
 .button__read, .button__comment
+	margin-top: 0px
 	font-family: $font-roboto
 	font-weight: 400
 	font-size: 14px
@@ -142,10 +163,17 @@ export default {
 	text-decoration: none
 	color: $color-light-blue
 
+.button
+	@media only screen and (max-width: 500px)
+		margin-top: 7px
+
 .image
 	width: 100%
 	height: 245px
 	background-color: $color-light-gray
+
+	@media only screen and (max-width: 500px)
+		height: 183px
 
 	& > .wrap
 		width: 100%
@@ -162,6 +190,14 @@ export default {
 	margin: 0px 25px
 	border-radius: 5px
 	background-color: $color-full-black
+
+	@media only screen and (max-width: 500px)
+		width: 100%
+		height: 205px
+		margin: 0px 0px
+
+		&:first-child
+			margin-top: 0px
 
 	& > .wrap
 		position: relative
@@ -181,4 +217,9 @@ export default {
 			left: 50%
 			transform: translate(-50%, -50%)
 			cursor: pointer
+			transition: width .3s ease-in-out, height .3s ease-in-out
+
+			@media only screen and (max-width: 500px)
+				width: 49.56px
+				height: 55px
 </style>
