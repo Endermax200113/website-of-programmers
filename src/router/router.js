@@ -1,10 +1,15 @@
 import HomeView from '@/views/HomeView';
+import ArticleView from '@/views/ArticleView';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
 	{
 		path: '/',
 		component: HomeView
+	},
+	{
+		path: '/article',
+		component: ArticleView
 	}
 ];
 

@@ -1,5 +1,5 @@
 <template>
-	<div class="post">
+	<article class="post">
 		<div class="post__element image" v-if="post.hasImage">
 			<div class="wrap">
 				<img :src=post.image :alt=post.imageAlt class="img">
@@ -14,7 +14,7 @@
 		</div>
 
 		<div class="post__element title" v-if="post.hasTitle">{{post.title}}</div>
-		<div class="post__element description" v-if="post.hasDescription">{{post.description}}</div>
+		<p class="post__element description" v-if="post.hasDescription">{{post.description}}</p>
 
 		<div class="post__element last">
 			<span class="info">
@@ -30,7 +30,7 @@
 				<a href="#" class="button__comment" v-else-if="post.canComment">оставить комментарий</a>
 			</span>
 		</div>
-	</div>
+	</article>
 </template>
 
 <script>
