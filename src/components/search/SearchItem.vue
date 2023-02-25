@@ -42,6 +42,11 @@ export default {
 	background-color: $color-foreground
 	box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.35)
 	border-radius: 5px
+	transition: padding .3s ease-in-out, width .3s ease-in-out
+
+	@media only screen and (max-width: 500px)
+		width: calc(100% - 30px)
+		padding: 15px
 
 	&:last-child
 		margin-bottom: 0px
@@ -69,6 +74,9 @@ export default {
 .bottom
 	display: flex
 	justify-content: space-between
+
+	@media only screen and (max-width: 500px)
+		flex-direction: column
 
 	&__element
 		display: flex
@@ -107,4 +115,7 @@ export default {
 			text-align: right
 			text-decoration: none
 			color: $color-light-blue
+
+			@media only screen and (max-width: 500px)
+				margin-top: 7px
 </style>

@@ -160,7 +160,7 @@ export default {
 	justify-content: space-between
 
 .menu
-	width: 100%
+	flex-basis: 50%
 	height: 100%
 	display: flex
 	transition: margin-top .3s ease-in-out
@@ -171,10 +171,16 @@ export default {
 	&.left
 		position: relative
 
-	@media only screen and (max-width: 700px)
-		&.left
+		@media only screen and (max-width: 700px)
 			margin-top: -100%
-	
+		
+		@media only screen and (max-width: 660px)
+			transition: margin-top .0s ease-in-out
+		
+		@media only screen and (max-width: 500px)
+			flex-basis: 0px
+			margin-top: 0%
+
 	&__sidebar
 		z-index: 2
 
@@ -197,8 +203,6 @@ export default {
 			width: 210px
 
 		@media only screen and (max-width: 700px)
-			transition: margin-top .3s ease-in-out
-
 			&:first-child
 				margin-top: -100%
 			
@@ -206,10 +210,14 @@ export default {
 				margin-top: 200%
 		
 		@media only screen and (max-width: 660px)
-			width: 0px
+			display: none
 			
 			&_search
+				display: flex
 				width: 210px
+			
+			&.mobile
+				display: list-item
 	
 	&__link
 		height: 100%
@@ -223,6 +231,10 @@ export default {
 		text-transform: uppercase
 		text-decoration: none
 		color: $color-full-white
+
+		@media only screen and (max-width: 500px)
+			font-size: 0px
+			line-height: 0px
 
 		&:hover
 			background-color: $color-blue
