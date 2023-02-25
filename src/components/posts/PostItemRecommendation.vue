@@ -23,9 +23,18 @@ export default {
 	margin-bottom: 25px
 	display: flex
 	flex-direction: column
+	transition: width .3s ease-in-out, flex-basis .3s ease-in-out, margin-bottom .3s ease-in-out
 
 	&:nth-last-child(2), &:nth-last-child(1)
 		margin-bottom: 0px
+	
+	@media only screen and (max-width: 500px)
+		width: 100%
+		flex-basis: 100%
+		margin-bottom: 20px
+
+		&:nth-last-child(2)
+			margin-bottom: 20px
 
 	&__element
 		width: 100%

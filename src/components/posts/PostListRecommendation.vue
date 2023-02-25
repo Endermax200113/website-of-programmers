@@ -31,4 +31,8 @@ export default {
 	flex-wrap: wrap
 	justify-content: space-between
 	align-content: space-between
+
+	@media only screen and (max-width: 500px)
+		flex-direction: column
+		flex-wrap: nowrap
 </style>

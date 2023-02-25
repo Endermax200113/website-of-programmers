@@ -28,6 +28,7 @@ export default {
 html
 	color-scheme: dark
 	background-color: $color-background
+	transition: width .3s ease-in-out, height .3s ease-in-out
 
 .app 
 	display: flex

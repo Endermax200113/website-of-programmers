@@ -104,10 +104,21 @@ export default {
 	line-height: 14px
 	text-decoration: none
 	color: $color-light-blue
+	transition: margin-top .3s ease-in-out
+
+	@media only screen and (max-width: 500px)
+		margin-top: 10px
 
 .answers
 	margin-left: 30px
+	transition: margin-left .3s ease-in-out
+
+	@media only screen and (max-width: 500px)
+		margin-left: 10px
 
 .answer
 	margin-top: 30px
+
+	@media only screen and (max-width: 500px)
+		margin-top: 25px
 </style>

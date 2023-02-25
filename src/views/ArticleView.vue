@@ -113,6 +113,13 @@ export default {
 .container
 	width: 600px
 	margin: 0 auto
+	transition: width .3s ease-in-out
+
+	@media only screen and (max-width: 700px)
+		width: 445px
+	
+	@media only screen and (max-width: 500px)
+		width: 290px
 
 .post
 	width: calc(100% - 50px)
@@ -121,6 +128,12 @@ export default {
 	background-color: $color-foreground
 	box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.35)
 	border-radius: 5px
+	transition: padding .3s ease-in-out, width .3s ease-in-out, margin-bottom .3s ease-in-out
+
+	@media only screen and (max-width: 500px)
+		width: calc(100% - 30px)
+		padding: 15px 15px 20px
+		margin-bottom: 45px
 
 	&__line
 		border: 1px solid $color-black1
@@ -167,6 +180,10 @@ export default {
 	&__info
 		margin-top: 5px
 		display: flex
+		transition: margin-top .3s ease-in-out
+
+		@media only screen and (max-width: 500px)
+			margin-top: 10px
 
 		&_element
 			font-family: $font-lato
@@ -200,6 +217,10 @@ export default {
 
 	&__element
 		margin-top: 25px
+		transition: margin-top .3s ease-in-out
+
+		@media only screen and (max-width: 500px)
+			margin-top: 18px
 	
 		&.paragraph
 			font-family: $font-roboto
@@ -213,6 +234,10 @@ export default {
 			width: 100%
 			height: 230px
 			background-color: $color-light-gray
+			transition: height .3s ease-in-out
+
+			@media only screen and (max-width: 500px)
+				height: 110px
 
 			& .image__background
 				position: absolute
