@@ -1,6 +1,7 @@
 import HomeView from '@/views/HomeView';
 import ArticleView from '@/views/ArticleView';
 import SearchView from '@/views/SearchView';
+import WorksView from '@/views/WorksView';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
@@ -15,6 +16,10 @@ const routes = [
 	{
 		path: '/search',
 		component: SearchView
+	},
+	{
+		path: '/works',
+		component: WorksView
 	}
 ];
 
