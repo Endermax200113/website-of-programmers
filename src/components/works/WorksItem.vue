@@ -43,15 +43,28 @@ export default {
 	display: flex
 	justify-content: space-between
 
+	@media only screen and (max-width: 500px)
+		height: auto
+		flex-direction: column
+		justify-content: flex-start
+
 	&:last-child
 		margin-bottom: 0px
 	
 	&_element
 		flex-basis: 50%
+		width: 50%
+
+		@media only screen and (max-width: 500px)
+			flex-basis: 100%
+			width: 100%
 
 	& .wrap
-		width: 50%
 		height: 100%
+
+		@media only screen and (max-width: 500px)
+			height: 180px
+			flex-basis: unset
 
 		& .image
 			width: 100%
@@ -59,12 +72,32 @@ export default {
 			object-fit: cover
 			border-top-left-radius: 5px
 			border-bottom-left-radius: 5px
+
+			@media only screen and (max-width: 500px)
+				border-bottom-left-radius: 0px
+				border-top-right-radius: 5px
 	
 	& .info
 		position: relative
 		flex-basis: calc(50% - 50px)
+		width: calc(50% - 50px)
 		height: calc(100% - 55px)
 		padding: 30px 25px 25px
+		transition: flex-basis .3s ease-in-out, width .3s ease-in-out, height .3s ease-in-out, padding .3s ease-in-out
+
+		@media only screen and (max-width: 700px)
+			flex-basis: calc(50% - 40px)
+			width: calc(50% - 40px)
+			height: calc(100% - 45px)
+			padding: 25px 20px 20px
+		
+		@media only screen and (max-width: 500px)
+			flex-basis: calc(100% - 30px)
+			width: calc(100% - 30px)
+			padding: 20px 15px 20px
+			height: auto
+			display: flex
+			flex-direction: column
 
 		&__site
 			margin-bottom: 30px
@@ -73,6 +106,14 @@ export default {
 			font-size: 24px
 			line-height: 28px
 			color: $color-full-white
+			transition: margin-bottom .3s ease-in-out
+
+			@media only screen and (max-width: 700px)
+				margin-bottom: 20px
+			
+			@media only screen and (max-width: 500px)
+				font-size: 18px
+				line-height: 21px
 		
 		&__description
 			margin-bottom: 30px
@@ -81,12 +122,26 @@ export default {
 			font-size: 16px
 			line-height: 27px
 			color: $color-dim-white
+			transition: margin-bottom .3s ease-in-out, line-height .3s ease-in-out
+
+			@media only screen and (max-width: 700px)
+				margin-bottom: 20px
+				line-height: 22px
+			
+			@media only screen and (max-width: 500px)
+				font-size: 14px
+				line-height: 21px
 		
 		&__tags
 			display: flex
+			flex-wrap: wrap
+
+			@media only screen and (max-width: 500px)
+				margin-bottom: 10px
 
 			&_tag
-				margin-left: 10px
+				margin-right: 10px
+				margin-bottom: 10px
 				background-color: $color-yellow
 				border-radius: 3px
 				padding: 4px 9px
@@ -96,8 +151,8 @@ export default {
 				line-height: 13px
 				color: $color-full-white
 
-				&:first-child
-					margin-left: 0px
+				&:last-child
+					margin-right: 0px
 		
 		&__button
 			position: absolute
@@ -115,4 +170,8 @@ export default {
 			line-height: 14px
 			color: $color-full-white
 			cursor: pointer
+
+			@media only screen and (max-width: 500px)
+				position: static
+				align-self: flex-end
 </style>
