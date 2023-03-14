@@ -3,6 +3,7 @@ import ArticleView from '@/views/ArticleView';
 import SearchView from '@/views/SearchView';
 import WorksView from '@/views/WorksView';
 import ProfileView from '@/views/ProfileView';
+import AuthView from '@/views/AuthView';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
@@ -25,6 +26,10 @@ const routes = [
 	{
 		path: '/profile',
 		component: ProfileView
+	},
+	{
+		path: '/auth',
+		component: AuthView
 	}
 ];
 
