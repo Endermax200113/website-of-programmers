@@ -58,15 +58,31 @@ export default {
 		font-size: 21px
 		line-height: 21px
 		color: $color-full-white
+		transition: margin-bottom .3s ease-in-out
+
+		@media only screen and (max-width: 500px)
+			margin-bottom: 30px
 	
 	& .profile__form
 		width: 100%
 		display: flex
 		justify-content: space-between
 
+		@media only screen and (max-width: 500px)
+			flex-direction: column-reverse
+
 		& .form__data
 			width: 340px
 			flex-basis: 340px
+			transition: width .3s ease-in-out, flex-basis .3s ease-in-out
+
+			@media only screen and (max-width: 700px)
+				width: 280px
+				flex-basis: 280px
+
+			@media only screen and (max-width: 500px)
+				width: 100%
+				flex-basis: unset
 
 			& .data__textfield
 				width: 100%
@@ -75,6 +91,17 @@ export default {
 		& .form__avatar
 			width: 150px
 			flex-basis: 150px
+			margin-bottom: 0px
+			transition: width .3s ease-in-out, flex-basis .3s ease-in-out, margin-bottom .3s ease-in-out
+
+			@media only screen and (max-width: 700px)
+				width: 130px
+				flex-basis: 130px
+			
+			@media only screen and (max-width: 500px)
+				flex-basis: unset
+				align-self: center
+				margin-bottom: 30px
 
 			& .wrap
 				display: block
@@ -82,6 +109,11 @@ export default {
 				height: 150px
 				margin-bottom: 15px
 				cursor: pointer
+				transition: width .3s ease-in-out, height .3s ease-in-out
+
+				@media only screen and (max-width: 700px)
+					width: 130px
+					height: 130px
 
 				& .image
 					width: 100%
@@ -89,6 +121,7 @@ export default {
 					object-fit: cover
 			
 			& .select
+				display: block
 				font-family: $font-roboto
 				font-weight: 400
 				font-size: 14px
@@ -99,4 +132,7 @@ export default {
 
 				&:hover
 					text-decoration-line: underline
+				
+				@media only screen and (max-width: 500px)
+					text-align: center
 </style>
