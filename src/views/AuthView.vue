@@ -35,7 +35,7 @@
 export default {
 	data() {
 		return {
-			login: true
+			login: false
 		}
 	},
 }
@@ -67,6 +67,10 @@ export default {
 		line-height: 21px
 		text-align: center
 		color: $color-full-white
+		transition: margin-bottom .3s ease-in-out
+
+		@media only screen and (max-width: 500px)
+			margin-bottom: 30px
 	
 	& .auth__form
 		width: 280px
