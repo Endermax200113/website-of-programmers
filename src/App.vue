@@ -6,16 +6,19 @@
 			<Header />
 			<RouterView />
 		</div>
+
+		<ModalWindows />
 	</div>
 </template>
 
 <script>
 import Sidebar from '@/components/Sidebar';
 import Header from '@/components/Header';
+import ModalWindows from '@/components/ModalWindows';
 
 export default {
 	components: {
-		Sidebar, Header
+		Sidebar, Header, ModalWindows
 	},
 }
 </script>

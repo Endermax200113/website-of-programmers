@@ -118,7 +118,7 @@ export default {
 	height: 40px
 	background-color: $color-dim-black
 	box-shadow: 0px 5px 22px rgba(0, 0, 0, 0.25)
-	z-index: 9999
+	z-index: 9997
 	transition: width .3s ease-in-out
 
 	@media only screen and (max-width: 1000px)
@@ -144,7 +144,7 @@ export default {
 
 	&.show
 		width: 100vw
-		background-color: #0008
+		background-color: rgba($color-full-black, 0.5)
 		transition: background-color .3s ease-in-out, width .0s ease-in-out
 	
 	@media only screen and (min-width: 701px)
