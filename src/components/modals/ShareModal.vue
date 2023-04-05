@@ -45,6 +45,11 @@ export default {
 	display: flex
 	justify-content: center
 	align-items: center
+	transition: width .3s ease-in-out, height .3s ease-in-out
+	
+	@media only screen and (max-width: 500px)
+		width: 300px
+		height: 150px
 
 	& .social
 		display: flex

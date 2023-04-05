@@ -11,8 +11,8 @@
 			</form>
 
 			<div class="info">
-				<span class="info__contact info__contact_email">e-mail: <a href="mailto:info@mywebsite.ru" class="info__contact info__link">info@mywebsite.ru</a></span>
-				<span class="info__contact">тел: <a href="tel:+94323285622" class="info__contact info__link">+943-232-856-22</a></span>
+				<div class="info__contact info__contact_email">e-mail: <a href="mailto:info@mywebsite.ru" class="info__contact info__link">info@mywebsite.ru</a></div>
+				<div class="info__contact">тел: <a href="tel:+94323285622" class="info__contact info__link">+943-232-856-22</a></div>
 			</div>
 		</div>
 	</div>
@@ -46,6 +46,11 @@ export default {
 	display: flex
 	justify-content: center
 	align-items: center
+	transition: width .3s ease-in-out, height .3s ease-in-out
+
+	@media only screen and (max-width: 500px)
+		width: 300px
+		height: 310px
 
 	& .contact
 		width: 340px
@@ -53,6 +58,10 @@ export default {
 		display: flex
 		flex-direction: column
 		justify-content: center
+		transition: width .3s ease-in-out
+
+		@media only screen and (max-width: 500px)
+			width: 250px
 
 		& .textfield
 			margin-bottom: 25px
@@ -70,6 +79,13 @@ export default {
 	position: absolute
 	bottom: 25px
 	margin: 0 auto
+	display: flex
+	justify-content: center
+	transition: bottom .3s ease-in-out
+
+	@media only screen and (max-width: 500px)
+		bottom: 15px
+		flex-direction: column
 
 	&__contact
 		font-family: $font-roboto
@@ -80,4 +96,8 @@ export default {
 
 		&_email
 			margin-right: 15px
+
+			@media only screen and (max-width: 500px)
+				margin-right: 0px
+				margin-bottom: 5px
 </style>

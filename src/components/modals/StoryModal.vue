@@ -37,6 +37,11 @@ export default {
 	height: 588px
 	background-color: $color-light-gray
 	box-shadow: 0px 10px 30px rgba($color-full-black, 0.25)
+	transition: width .3s ease-in-out, height .3s ease-in-out
+
+	@media only screen and ((max-width: 500px) or (max-height: 570px))
+		width: 320px
+		height: 450px
 
 .wrap
 	position: relative
@@ -64,8 +69,9 @@ export default {
 			cursor: pointer
 		
 		& .scroll
-			width: 336px
+			width: 100%
 			height: 7px
+			margin-right: 20px
 			border-radius: 3px
 			background-color: $color-full-white
 			cursor: pointer

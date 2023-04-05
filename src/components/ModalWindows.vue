@@ -1,8 +1,23 @@
 <template>
 	<div class="modal-windows show">
-		<StoryModal class="modal-window" v-if="modal === Modals.Story" :class="{'this': modal === Modals.Story}" />
-		<ContactModal class="modal-window" v-else-if="modal === Modals.Contact" :class="{'this': modal === Modals.Contact}" />
-		<ShareModal class="modal-window" v-else-if="modal === Modals.Share" :class="{'this': modal === Modals.Share}" />
+		<StoryModal 
+			class="modal-window" 
+			:key="Modals.Story" 
+			v-if="modal === Modals.Story" 
+			:class="{'this': modal === Modals.Story}"
+		/>
+		<ContactModal 
+			class="modal-window" 
+			:key="Modals.Contact" 
+			v-else-if="modal === Modals.Contact" 
+			:class="{'this': modal === Modals.Contact}"
+		/>
+		<ShareModal 
+			class="modal-window" 
+			:key="Modals.Share"
+			v-else-if="modal === Modals.Share" 
+			:class="{'this': modal === Modals.Share}"
+		/>
 	</div>
 </template>
 
@@ -52,4 +67,7 @@ export default {
 		width: 100%
 		transform: scale(1)
 		transition: transform .3s ease-in-out, width .0s ease-in-out
+
+		@media only screen and ((max-width: 800px) or (max-height: 650px))
+			transform: scale(0.85)
 </style>
