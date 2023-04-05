@@ -1,27 +1,30 @@
 <template>
 	<div class="modal-windows show">
-		<StoryModal class="modal-window" v-if="modal === Modals.Story" :class="{'this': modal === Modals.Story}"/>
-		<ContactModal class="modal-window" v-else-if="modal === Modals.Contact" :class="{'this': modal === Modals.Contact}"/>
+		<StoryModal class="modal-window" v-if="modal === Modals.Story" :class="{'this': modal === Modals.Story}" />
+		<ContactModal class="modal-window" v-else-if="modal === Modals.Contact" :class="{'this': modal === Modals.Contact}" />
+		<ShareModal class="modal-window" v-else-if="modal === Modals.Share" :class="{'this': modal === Modals.Share}" />
 	</div>
 </template>
 
 <script>
 import StoryModal from '@/components/modals/StoryModal';
 import ContactModal from '@/components/modals/ContactModal';
+import ShareModal from '@/components/modals/ShareModal';
 
 const Modals = Object.freeze({
 	Story: 0,
-	Contact: 1
+	Contact: 1,
+	Share: 2
 });
 
 export default {
 	components: {
-		StoryModal, ContactModal
+		StoryModal, ContactModal, ShareModal
 	},
 	data() {
 		return {
 			Modals,
-			modal: Modals.Contact
+			modal: Modals.Share
 		}
 	},
 }
