@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="window">
 			<div class="wrap">
-				<img src="@/assets/img/stories/playing.jpg" alt="" class="image">
+				<img src="@/assets/img/stories/playing.jpg" alt="Проигрывающее &quot;видео&quot;" class="image">
 
 				<div class="player">
 					<ButtonPlay2 class="play"/>
