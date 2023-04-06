@@ -7,11 +7,11 @@
 				</li>
 
 				<li class="menu__item">
-					<a href="#" class="menu__link">Главная</a>
+					<RouterLink to="/" class="menu__link">Главная</RouterLink>
 				</li>
 				
 				<li class="menu__item">
-					<button @click="submenuArticles" type="button" class="menu__btn">Статьи <IconArrowDown class="menu__btn_arrow"/></button>
+					<button @click="submenuArticles" type="button" class="menu__btn">Статьи <IconArrowDown class="menu__btn_arrow" /></button>
 
 					<ul class="menu__subitems hide">
 						<li class="menu__subitem">
@@ -39,11 +39,11 @@
 
 			<ul class="menu right">
 				<li class="menu__item">
-					<a href="#" class="menu__link">Профиль</a>
+					<RouterLink to="/profile" class="menu__link">Профиль</RouterLink>
 				</li>
 				
 				<li class="menu__item menu__item_search">
-					<input type="search" class="menu__search" placeholder="Поиск по блогу">
+					<input type="search" class="menu__search" placeholder="Поиск по блогу" @keypress="if ($event.key === 'Enter') this.$router.push('/search');">
 				</li>
 			</ul>
 		</nav>

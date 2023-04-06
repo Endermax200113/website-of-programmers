@@ -29,7 +29,7 @@
 			<hr class="line">
 
 			<div class="btns">
-				<button type="button" class="btn btn_works">Мои работы</button>
+				<button type="button" class="btn btn_works" @click="$router.push('/works');">Мои работы</button>
 				<button type="button" class="btn btn_write" @click="showContact">Написать мне</button>
 			</div>
 		</div>

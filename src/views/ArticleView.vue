@@ -2,9 +2,9 @@
 	<div class="container">
 		<article class="post">
 			<div class="top">
-				<a href="#" class="top__button">вернуться назад</a>
+				<span class="top__button" @click="$router.go(-1)">вернуться назад</span>
 
-				<span class="top__button top__button_share" @click="showShare">поделиться <Share class="top__button_icon" /></span>
+				<span class="top__button" @click="showShare">поделиться <Share class="top__button_icon" /></span>
 			</div>
 
 			<div class="basic">
@@ -176,9 +176,7 @@ export default {
 		text-decoration: none
 		color: $color-full-white
 		opacity: 0.6
-		
-		&.top__button_share
-			cursor: pointer
+		cursor: pointer
 
 		& .top__button_icon
 			margin-left: 7.63px

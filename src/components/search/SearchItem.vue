@@ -17,7 +17,7 @@
 			</div>
 
 			<div class="bottom__element">
-				<a href="#" class="go">перейти</a>
+				<RouterLink to="/article" class="go">перейти</RouterLink>
 			</div>
 		</div>
 	</div>

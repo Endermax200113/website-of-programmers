@@ -47,13 +47,13 @@
 					</li>
 
 					<li class="menu__item">
-						<a href="#" class="menu__link">Профиль</a>
+						<RouterLink to="/profile" class="menu__link">Профиль</RouterLink>
 					</li>
 				</ul>
 
 				<div class="btns">
-					<button type="button" class="btns__btn btns__btn_works">Мои работы</button>
-					<button type="button" class="btns__btn btns__btn_write">Написать мне</button>
+					<button type="button" class="btns__btn btns__btn_works" @click="$router.push('/works');">Мои работы</button>
+					<button type="button" class="btns__btn btns__btn_write" @click="showContact">Написать мне</button>
 				</div>
 			</div>
 		</div>
@@ -61,8 +61,22 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex';
+
 export default {
-	
+	methods: {
+		...mapMutations([
+			'setModalWindow'
+		]),
+		showContact() {
+			this.setModalWindow(this.getModals.Contact)
+		}
+	},
+	computed: {
+		...mapGetters([
+			'getModals'
+		])
+	}
 }
 </script>
 

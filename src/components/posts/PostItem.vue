@@ -26,8 +26,8 @@
 			</span>
 
 			<span class="button" v-if="post.canRead || post.canComment">
-				<a href="#" class="button__read" v-if="post.canRead">читать</a>
-				<a href="#" class="button__comment" v-else-if="post.canComment">оставить комментарий</a>
+				<RouterLink to="/article" class="button__read" v-if="post.canRead">читать</RouterLink>
+				<RouterLink to="/article" class="button__comment" v-else-if="post.canComment">оставить комментарий</RouterLink>
 			</span>
 		</div>
 	</article>
