@@ -4,7 +4,7 @@
 			<Story
 				v-for="story in stories"
 				:story="story"
-				:key="story.id"/>
+				:key="story.id" />
 		</div>
 	</div>
 </template>

@@ -1,8 +1,8 @@
 <template>
-	<div class="story">
+	<div class="story" @click="show">
 		<div class="wrap">
 			<div class="effect"></div>
-			<img :src="`${story.image}`" :alt=story.alt class="image">
+			<img :src=story.image :alt=story.alt class="image">
 		</div>
 
 		<h3 class="title">{{story.title}}</h3>
@@ -11,11 +11,26 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from "vuex";
+
 export default {
 	props: {
 		story: {
 			type: Object,
 			required: true
+		}
+	},
+	computed: {
+		...mapGetters([
+			'getModals'
+		])
+	},
+	methods: {
+		...mapMutations({
+			setModalWindow: 'setModalWindow'
+		}),
+		show() {
+			this.setModalWindow(this.getModals.Story);
 		}
 	}
 }

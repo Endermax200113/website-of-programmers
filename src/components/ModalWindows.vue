@@ -1,22 +1,22 @@
 <template>
-	<div class="modal-windows show">
-		<StoryModal 
+	<div class="modal-windows" :class="{'show': $store.state.modal !== $store.state.Modals.Nobody}">
+		<StoryModal
 			class="modal-window" 
-			:key="Modals.Story" 
-			v-if="modal === Modals.Story" 
-			:class="{'this': modal === Modals.Story}"
+			:key="$store.state.Modals.Story" 
+			:class="{'this': $store.state.modal === $store.state.Modals.Story}"
+			@click="close"
 		/>
 		<ContactModal 
 			class="modal-window" 
-			:key="Modals.Contact" 
-			v-else-if="modal === Modals.Contact" 
-			:class="{'this': modal === Modals.Contact}"
+			:key="$store.state.Modals.Contact" 
+			:class="{'this': $store.state.modal === $store.state.Modals.Contact}"
+			@click="close"
 		/>
 		<ShareModal 
 			class="modal-window" 
-			:key="Modals.Share"
-			v-else-if="modal === Modals.Share" 
-			:class="{'this': modal === Modals.Share}"
+			:key="$store.state.Modals.Share"
+			:class="{'this': $store.state.modal === $store.state.Modals.Share}"
+			@click="close"
 		/>
 	</div>
 </template>
@@ -25,22 +25,16 @@
 import StoryModal from '@/components/modals/StoryModal';
 import ContactModal from '@/components/modals/ContactModal';
 import ShareModal from '@/components/modals/ShareModal';
-
-const Modals = Object.freeze({
-	Story: 0,
-	Contact: 1,
-	Share: 2
-});
+import { mapActions } from 'vuex';
 
 export default {
 	components: {
 		StoryModal, ContactModal, ShareModal
 	},
-	data() {
-		return {
-			Modals,
-			modal: Modals.Share
-		}
+	methods: {
+		...mapActions({
+			close: 'close'
+		})
 	},
 }
 </script>
@@ -60,14 +54,13 @@ export default {
 
 .modal-window
 	width: 0%
+	height: 0%
 	transform: scale(0)
-	transition: transform .3s ease-in-out, width .0s ease-in-out .3s
+	transition: transform .3s ease-in-out, width .0s ease-in-out .3s, height .0s ease-in-out .3s
 
 	&.this
 		width: 100%
+		height: 100%
 		transform: scale(1)
-		transition: transform .3s ease-in-out, width .0s ease-in-out
-
-		@media only screen and ((max-width: 800px) or (max-height: 650px))
-			transform: scale(0.85)
+		transition: transform .3s ease-in-out, width .0s ease-in-out, height .0s ease-in-out
 </style>

@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
-		<div class="window">
-			<ButtonClose class="close"/>
+		<div class="window" @click.stop>
+			<ButtonClose class="close" @click="close"/>
 
 			<form class="contact">
 				<TextField class="textfield" placeholder="Имя Фамилия" />
@@ -20,11 +20,17 @@
 
 <script>
 import ButtonClose from '@/assets/svg/ButtonClose';
+import { mapActions } from 'vuex';
 
 export default {
 	components: {
 		ButtonClose
-	}
+	},
+	methods: {
+		...mapActions([
+			'close'
+		])
+	},
 }
 </script>
 

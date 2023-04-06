@@ -2,10 +2,10 @@
 	<div class="app">
 		<Sidebar />
 
-		<div class="app__page">
-			<Header />
+		<main class="app__page">
+			<Header_ />
 			<RouterView />
-		</div>
+		</main>
 
 		<ModalWindows />
 	</div>
@@ -13,12 +13,12 @@
 
 <script>
 import Sidebar from '@/components/Sidebar';
-import Header from '@/components/Header';
+import Header_ from '@/components/Header';
 import ModalWindows from '@/components/ModalWindows';
 
 export default {
 	components: {
-		Sidebar, Header, ModalWindows
+		Sidebar, Header_, ModalWindows
 	},
 }
 </script>

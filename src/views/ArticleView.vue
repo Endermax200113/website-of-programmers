@@ -4,7 +4,7 @@
 			<div class="top">
 				<a href="#" class="top__button">вернуться назад</a>
 
-				<a href="#" class="top__button">поделиться <Share class="top__button_icon"/></a>
+				<span class="top__button top__button_share" @click="showShare">поделиться <Share class="top__button_icon" /></span>
 			</div>
 
 			<div class="basic">
@@ -57,6 +57,7 @@ import Share from '@/assets/svg/social/share/Share';
 import PostListRecommendation from '@/components/posts/PostListRecommendation';
 import WriteComment from '@/components/WriteComment';
 import CommentList from '@/components/comments/CommentList';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
 	components: {
@@ -106,6 +107,19 @@ export default {
 			]
 		}
 	},
+	methods: {
+		...mapMutations([
+			'setModalWindow'
+		]),
+		showShare() {
+			this.setModalWindow(this.getModals.Share);
+		}
+	},
+	computed: {
+		...mapGetters([
+			'getModals'
+		])
+	}
 }
 </script>
 
@@ -162,6 +176,9 @@ export default {
 		text-decoration: none
 		color: $color-full-white
 		opacity: 0.6
+		
+		&.top__button_share
+			cursor: pointer
 
 		& .top__button_icon
 			margin-left: 7.63px

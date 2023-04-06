@@ -30,7 +30,7 @@
 
 			<div class="btns">
 				<button type="button" class="btn btn_works">Мои работы</button>
-				<button type="button" class="btn btn_write">Написать мне</button>
+				<button type="button" class="btn btn_write" @click="showContact">Написать мне</button>
 			</div>
 		</div>
 	</aside>
@@ -40,11 +40,25 @@
 import Instagram from '@/assets/svg/social/sidebar/Instagram';
 import Vk from '@/assets/svg/social/sidebar/Vk';
 import Pinterest from '@/assets/svg/social/sidebar/Pinterest';
+import { mapMutations, mapGetters } from 'vuex';
 
 export default {
 	components: {
 		Instagram, Vk, Pinterest
-	}
+	},
+	computed: {
+		...mapGetters([
+			'getModals'
+		])
+	},
+	methods: {
+		...mapMutations([
+			'setModalWindow'
+		]),
+		showContact() {
+			this.setModalWindow(this.getModals.Contact)
+		}
+	},
 }
 </script>
 

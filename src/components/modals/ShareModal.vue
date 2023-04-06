@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
-		<div class="window">
-			<ButtonClose class="close" />
+		<div class="window" @click.stop>
+			<ButtonClose class="close" @click="close" />
 
 			<div class="social">
 				<Facebook class="social__icon" />
@@ -19,10 +19,16 @@ import Facebook from '@/assets/svg/social/share/Facebook';
 import Copy from '@/assets/svg/social/share/Copy';
 import Twitter from '@/assets/svg/social/share/Twitter';
 import Vk from '@/assets/svg/social/share/Vk';
+import { mapActions } from 'vuex';
 
 export default {
 	components: {
 		ButtonClose, Facebook, Copy, Twitter, Vk
+	},
+	methods: {
+		...mapActions([
+			'close'
+		])
 	}
 }
 </script>

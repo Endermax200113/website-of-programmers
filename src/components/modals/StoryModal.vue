@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<div class="window">
+		<div class="window" @click.stop>
 			<div class="wrap">
 				<img src="@/assets/img/stories/playing.jpg" alt="Проигрывающее &quot;видео&quot;" class="image">
 
@@ -20,7 +20,7 @@ import ButtonPlay2 from '@/assets/svg/ButtonPlay2';
 export default {
 	components: {
 		ButtonPlay2
-	}
+	},
 }
 </script>
 
@@ -38,6 +38,10 @@ export default {
 	background-color: $color-light-gray
 	box-shadow: 0px 10px 30px rgba($color-full-black, 0.25)
 	transition: width .3s ease-in-out, height .3s ease-in-out
+
+	@media only screen and ((max-width: 800px) or (max-height: 650px))
+		width: 370px
+		height: 500px
 
 	@media only screen and ((max-width: 500px) or (max-height: 570px))
 		width: 320px
